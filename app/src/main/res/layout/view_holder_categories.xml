@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:layout_marginTop="@dimen/margin_medium_3"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_medium"
+    android:weightSum="4">
+
+    <RelativeLayout
+        android:id="@+id/btn_doctors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_doctors"
+            style="@style/category_image"
+            android:src="@drawable/doctor_without_link" />
+
+        <TextView
+            android:id="@+id/tv_doctors"
+            style="@style/category_text"
+            android:layout_below="@id/iv_doctors"
+            android:text="Doctors" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_treatments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_treatments"
+            style="@style/category_image"
+            android:src="@drawable/syringe" />
+
+        <TextView
+            android:id="@+id/tv_treatments"
+            style="@style/category_text"
+            android:layout_below="@id/iv_treatments"
+            android:text="Treatments" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_medicine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_medicine"
+            style="@style/category_image"
+            android:src="@drawable/capsule" />
+
+        <TextView
+            android:id="@+id/tv_medicine"
+            style="@style/category_text"
+            android:layout_below="@id/iv_medicine"
+            android:text="Medicine" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_consultants"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_consultants"
+            style="@style/category_image"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:src="@drawable/consultant" />
+
+        <TextView
+            android:id="@+id/tv_consultants"
+            style="@style/category_text"
+            android:layout_below="@id/iv_consultants"
+            android:text="Consultants" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

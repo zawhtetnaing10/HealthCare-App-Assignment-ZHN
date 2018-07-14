@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:elevation="@dimen/margin_medium_3"
+        android:fitsSystemWindows="true">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/collapsing_toolbar_height"
+            app:contentScrim="@android:color/holo_red_light"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/health_care_backdrop"
+
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="5">
+
+                    <ImageView
+                        android:id="@+id/iv_person"
+                        style="@style/toolbar_image_style"
+                        android:paddingRight="@dimen/margin_medium_2"
+                        android:src="@drawable/ic_person_outline_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/tv_featured"
+                        style="@style/toolbar_text_style"
+                        android:text="Featured" />
+
+                    <TextView
+                        android:id="@+id/tv_forum"
+                        style="@style/toolbar_text_style_gray"
+                        android:text="Forum" />
+
+                    <TextView
+                        style="@style/toolbar_text_style_gray"
+                        android:text="Feedback" />
+
+                    <ImageView
+                        android:id="@+id/iv_calendar"
+                        style="@style/toolbar_image_style"
+                        android:src="@drawable/ic_perm_contact_calendar_black_24dp" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_healthcare_articles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <include
+            android:id="@+id/vp_empty"
+            layout="@layout/view_pod_empty"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

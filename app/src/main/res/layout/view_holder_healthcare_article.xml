@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_medium_2">
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tv_article_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/zawgyi"
+        android:text="The effects of mental disorder are more devastating than you think!!"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_regular_3x" />
+
+    <ImageView
+        android:id="@+id/iv_article_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/healthcare_article_image_height"
+        android:layout_below="@id/tv_article_title"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mental_disorder" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_article_image"
+        android:layout_marginTop="@dimen/margin_medium_2">
+
+        <FrameLayout
+            android:id="@+id/fl_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_button"
+            android:clickable="true"
+            android:foreground="@drawable/ripple">
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="@dimen/margin_small"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_small"
+                android:text="Pretty"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_smaller" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/article_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_toRightOf="@id/fl_category"
+            android:text="zawhtetnaing"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/text_smaller" />
+
+        <RelativeLayout
+            android:id="@+id/btn_shares"
+            style="@style/like_share_comment_layout"
+            android:layout_toRightOf="@id/article_id">
+
+            <ImageView
+                android:id="@+id/iv_share_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_featured_video_gray_12dp" />
+
+            <TextView
+                android:id="@+id/tv_share_numbers"
+                style="@style/like_share_comment_numbers"
+                android:layout_toRightOf="@id/iv_share_icon"
+                android:text="5556" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_comment"
+            style="@style/like_share_comment_layout"
+            android:layout_toRightOf="@id/btn_shares">
+
+            <ImageView
+                android:id="@+id/iv_comment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_comment_gray_12dp" />
+
+            <TextView
+                android:id="@+id/tv_comment_numbers"
+                style="@style/like_share_comment_numbers"
+                android:layout_toRightOf="@id/iv_comment_icon"
+                android:text="229" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_like"
+            style="@style/like_share_comment_layout"
+            android:layout_toRightOf="@id/btn_comment">
+
+            <ImageView
+                android:id="@+id/iv_like_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_like_gray_12dp" />
+
+            <TextView
+                android:id="@+id/tv_like_numbers"
+                style="@style/like_share_comment_numbers"
+                android:layout_toRightOf="@id/iv_like_icon"
+                android:text="100" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
